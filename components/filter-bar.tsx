@@ -8,7 +8,7 @@ interface FilterBarProps {
   onCategoryChange: (category: string) => void;
   onSearchChange: (search: string) => void;
 }
-import { Combobox } from '@headlessui/react';
+import { Combobox, ComboboxInput } from '@headlessui/react';
 
 export default function FilterBar({ 
   categories, 
@@ -41,10 +41,13 @@ export default function FilterBar({
       <div className="relative max-w-xs w-full">
         <Combobox onChange={onSearchChange}>
           <div className="relative">
-            <Combobox.Input
+            <ComboboxInput
               className="w-full pl-10 pr-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               placeholder="搜索模板..."
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setQuery(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                setQuery(e.target.value);
+                onSearchChange(e.target.value || '');
+              }}
             />
             <svg 
               className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" 

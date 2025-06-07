@@ -8,7 +8,7 @@ export const templates = [
     category: "SaaS",
     demoUrl: "https://ai-saas-demo.vercel.app",
     repoUrl: "https://github.com/nextjs-pro/ai-saas-starter",
-    image: "/templates/ai-saas.png",
+    image: "/images/coming-soon.jpg",
     stars: 1243
   },
   {
@@ -20,7 +20,7 @@ export const templates = [
     category: "E-commerce",
     demoUrl: "https://nextjs-ecommerce-demo.vercel.app",
     repoUrl: "https://github.com/vercel/nextjs-ecommerce",
-    image: "/templates/ecommerce.png",
+    image: "/images/coming-soon.jpg",
     stars: 2876
   },
   {
@@ -32,7 +32,7 @@ export const templates = [
     category: "Portfolio",
     demoUrl: "https://portfolio-pro.vercel.app",
     repoUrl: "https://github.com/designhub/portfolio-pro",
-    image: "/templates/portfolio.png",
+    image: '/images/portfolio.png',
     stars: 876
   },
   // 更多模板...

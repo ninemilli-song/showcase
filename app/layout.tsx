@@ -44,7 +44,7 @@ export default function RootLayout({
                   <div className="flex gap-5 items-center font-semibold">
                     <Link href={"/"}>首页</Link>
                     <div className="flex gap-5 items-center font-semibold">
-                      <Link href={"/posts"}>Posts</Link>
+                      <Link href={"/about"}>关于我</Link>
                     </div>
                   </div>
                   {!hasEnvVars ? <EnvVarWarning /> : <HeaderAuth />}

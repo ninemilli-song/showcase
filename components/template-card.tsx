@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface Template {
   id: number;
@@ -22,11 +23,12 @@ export default function TemplateCard({ template }: TemplateCardProps) {
     <div className="border border-gray-200 rounded-xl overflow-hidden transition-all hover:shadow-lg">
       {/* 预览图 */}
       <div className="relative h-48 bg-gray-100 border-b">
-        <img 
-          src={template.image} 
-          alt={template.title} 
+        <Image
+          src={template.image}
+          alt={template.title}
+          width={400}
+          height={192}
           className="w-full h-full object-cover"
-          loading="lazy"
         />
         <div className="absolute top-2 right-2 bg-white/80 px-2 py-1 rounded text-sm font-medium">
           {template.stars.toLocaleString()} ★

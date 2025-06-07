@@ -12,14 +12,17 @@ export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
   
+  // 确保 searchQuery 始终是字符串
+  const safeSearchQuery = searchQuery || '';
+  
   // 过滤模板
   const filteredTemplates = templates.filter(template => {
     const matchesCategory = selectedCategory === 'All' || template.category === selectedCategory;
     
     const matchesSearch = 
-      template.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      template.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      template.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
+      template.title.toLowerCase().includes(safeSearchQuery.toLowerCase()) ||
+      template.description.toLowerCase().includes(safeSearchQuery.toLowerCase()) ||
+      template.tags.some(tag => tag.toLowerCase().includes(safeSearchQuery.toLowerCase()));
     
     return matchesCategory && matchesSearch;
   });
